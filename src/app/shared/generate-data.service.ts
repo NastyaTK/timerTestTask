@@ -27,8 +27,6 @@ export class GenerateDataService {
   }
 
   public clearTimer(): void {
-    this.hh = 0;
-    this.mm = 0;
-    this.ss = 0;
+    this.hh = this.mm = this.ss = 0;
   }
 }

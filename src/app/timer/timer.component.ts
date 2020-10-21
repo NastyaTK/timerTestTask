@@ -29,7 +29,7 @@ export class TimerComponent {
     })
   }
 
-  public onStart() {
+  public onStart(): void {
     if (!this.intervalObj) {
       this.intervalObj = window.setInterval(() => {
         let timerobj: ITimer = this.dataService.createTimer();
@@ -39,19 +39,19 @@ export class TimerComponent {
       }, 1000)
     }
   }
-  public onStop() {
+  public onStop(): void {
     window.clearInterval(this.intervalObj);
     this.intervalObj = undefined;
     this.timer = { hh: "00", mm: "00", ss: "00" };
     this.dataService.clearTimer();
   }
-  public onReset() {
+  public onReset(): void {
     if (this.intervalObj) {
       this.onStop();
       this.onStart();
     }
   }
-  private onPause() {
+  private onPause(): void {
     if (this.intervalObj) {
       window.clearInterval(this.intervalObj);
       this.intervalObj = undefined;
