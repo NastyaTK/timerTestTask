@@ -1,6 +1,6 @@
 <section class="container">
     <h1 class="head">This is a Timer</h1>
-    <div class="timer" title="Double click to pause" (dblclick)="onPause()">
+    <div #timerElement class="timer" title="Double click to pause">
         <span class="timer-item">{{timer.hh}}</span>
         <span>:</span>
         <span class="timer-item">{{timer.mm}}</span>
