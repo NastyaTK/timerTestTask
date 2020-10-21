@@ -20,7 +20,7 @@ export class TimerComponent {
   public ngAfterViewInit(): void {
     const click$: Observable<Event> = fromEvent(this.timerDomElement.nativeElement, 'click');
     const doubleclick$: Observable<Array<Event>> = click$.pipe(
-      buffer(click$.pipe(debounceTime(150))),
+      buffer(click$.pipe(debounceTime(250))),
       filter((list: Array<Event>) => list.length === 2)
     )
 
